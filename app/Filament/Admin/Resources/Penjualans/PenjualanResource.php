@@ -5,7 +5,9 @@ namespace App\Filament\Admin\Resources\Penjualans;
 use App\Filament\Admin\Resources\Penjualans\Pages\CreatePenjualan;
 use App\Filament\Admin\Resources\Penjualans\Pages\EditPenjualan;
 use App\Filament\Admin\Resources\Penjualans\Pages\ListPenjualans;
+use App\Filament\Admin\Resources\Penjualans\Pages\ViewPenjualan;
 use App\Filament\Admin\Resources\Penjualans\Schemas\PenjualanForm;
+use App\Filament\Admin\Resources\Penjualans\Schemas\PenjualanInfolist;
 use App\Filament\Admin\Resources\Penjualans\Tables\PenjualansTable;
 use App\Models\t_penjualan;
 use BackedEnum;
@@ -33,6 +35,11 @@ class PenjualanResource extends Resource
         return PenjualanForm::configure($schema);
     }
 
+    public static function infolist(Schema $schema): Schema
+    {
+        return PenjualanInfolist::configure($schema);
+    }
+
     public static function table(Table $table): Table
     {
         return PenjualansTable::configure($table);
@@ -50,6 +57,7 @@ class PenjualanResource extends Resource
         return [
             'index' => ListPenjualans::route('/'),
             'create' => CreatePenjualan::route('/create'),
+            'view' => ViewPenjualan::route('/{record}'),
             'edit' => EditPenjualan::route('/{record}/edit'),
         ];
     }

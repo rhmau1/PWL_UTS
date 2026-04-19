@@ -23,4 +23,9 @@ class t_penjualan extends Model
     {
         return $this->belongsTo(m_user::class, 'user_id');
     }
+
+    public function details()
+    {
+        return $this->hasMany(t_penjualan_detail::class, 'penjualan_id');
+    }
 }
