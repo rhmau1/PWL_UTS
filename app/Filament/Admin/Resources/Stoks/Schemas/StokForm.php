@@ -3,6 +3,7 @@
 namespace App\Filament\Admin\Resources\Stoks\Schemas;
 
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
@@ -42,7 +43,7 @@ class StokForm
                             ->validationMessages([
                                 'required' => 'Petugas wajib dipilih',
                             ]),
-                        DatePicker::make('stok_tanggal')
+                        DateTimePicker::make('stok_tanggal')
                             ->native(false)
                             ->prefixIcon('heroicon-o-calendar')
                             ->label('Tanggal Stok')
