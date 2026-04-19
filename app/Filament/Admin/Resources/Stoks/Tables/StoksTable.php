@@ -35,7 +35,7 @@ class StoksTable
                 TextColumn::make('stok_tanggal')
                     ->sortable()
                     ->searchable()
-                    ->formatStateUsing(fn ($state) => Carbon::parse($state)->format('d M, Y'))
+                    ->formatStateUsing(fn ($state) => Carbon::parse($state)->format('d M, Y H:i'))
                     ->label('Tanggal Stok'),
             ])
             ->filters([
