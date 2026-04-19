@@ -1,0 +1,13 @@
+{
+    "agents": [
+        "gemini"
+    ],
+    "packages": [
+        "filament/filament"
+    ],
+    "skills": [
+        "laravel-best-practices",
+        "pest-testing",
+        "tailwindcss-development"
+    ]
+}
