@@ -36,7 +36,7 @@ class PenjualanDetailForm
                                 if (filled($state)) {
                                     $barang = m_barang::find($state);
                                     if ($barang) {
-                                        $set('harga', $barang->harga_beli);
+                                        $set('harga', $barang->harga_jual);
                                     }
                                 }
                             })
