@@ -18,4 +18,21 @@ class m_supplier extends Model
         'supplier_nama',
         'supplier_alamat',
     ];
+
+    public function stoks()
+    {
+        return $this->hasMany(t_stok::class, 'supplier_id');
+    }
+
+    public function barangs()
+    {
+        return $this->hasManyThrough(
+            m_barang::class,
+            t_stok::class,
+            'supplier_id',
+            'barang_id',
+            'supplier_id',
+            'barang_id'
+        );
+    }
 }

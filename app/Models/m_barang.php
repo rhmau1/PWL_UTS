@@ -25,4 +25,9 @@ class m_barang extends Model
     {
         return $this->belongsTo(m_kategori::class, 'kategori_id');
     }
+
+    public function stoks()
+    {
+        return $this->hasMany(t_stok::class, 'barang_id');
+    }
 }
