@@ -19,6 +19,10 @@ Route::get('/', function (Request $request) {
     return view('welcome', compact('barangs', 'kategoris'));
 })->name('home');
 
+Route::get('/login', function () {
+    return redirect()->route('filament.admin.auth.login');
+})->name('login');
+
 Route::get('/suppliers/{id}', function ($id) {
     $supplier = m_supplier::with(['barangs' => function($q) {
         $q->distinct();

@@ -35,7 +35,7 @@
                         Dashboard
                     </a>
                 @else
-                    <a href="{{ route('login') }}" class="text-slate-600 dark:text-slate-400 hover:text-amber-600">
+                    <a href="{{ route('filament.admin.auth.login') }}" class="text-slate-600 dark:text-slate-400 hover:text-amber-600">
                         Masuk
                     </a>
                 @endauth
