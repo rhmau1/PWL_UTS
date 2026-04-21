@@ -28,7 +28,14 @@ class PenjualanDetailForm
                             ]),
                         Select::make('barang_id')
                             ->label('Barang')
-                            ->relationship('barang', 'barang_nama')
+                            ->relationship('barang', 'barang_nama', modifyQueryUsing: function ($query) {
+                                return $query->whereIn('barang_id', function ($q) {
+                                    $q->from('t_stok')
+                                        ->select('barang_id')
+                                        ->groupBy('barang_id')
+                                        ->havingRaw('SUM(stok_jumlah) > 0');
+                                });
+                            })
                             ->preload()
                             ->required()
                             ->live()
